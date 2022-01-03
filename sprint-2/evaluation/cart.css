@@ -1,0 +1,50 @@
+.navbar{
+    width: 90%;
+    height: 100px;
+    border: 1px solid black;
+    margin: auto;
+    
+    background: powderblue;
+    padding: 10px;
+
+}
+img{
+    width: 250px;
+}
+#box{
+    border: 1px solid gray;
+    text-align: center;
+}
+.right{
+    width: 200px;
+    height: 200px;
+    
+    border: 1px solid black;
+    
+
+}
+.allbottom{
+    display: flex;
+    margin: auto;
+}
+
+
+
+.maindiv{
+    width: 66%;
+    
+    border: 1px solid black;
+    
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    grid-gap: 20px;
+}
+#details{
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+#details>input{
+    padding: 10px 30px;
+    margin: 10px;
+}

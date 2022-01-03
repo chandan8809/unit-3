@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>menu</title>
+    <link rel="stylesheet" href="menu.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>MENU</h1>
+        <a href="cart.html"><h1>Go to cart</h1></a> 
+
+        <h2>count:<span id="count"></span></h2>
+    </div>
+    <div class="maindiv">
+    </div>
+    
+</body>
+</html>
+<script>
+    var url="https://www.themealdb.com/api/json/v1/1/categories.php"
+    async function getdata(url){
+        try{
+            res=await fetch(url);
+            data=await res.json()
+            cata=data.categories
+            console.log(cata)
+            display(cata)
+        }
+        catch(err){
+            console.log(err)
+
+        }
+       
+    }
+    getdata(url)
+    var count=0
+    var arr=[]
+    function display(cata){
+        cata.map(function(elem){
+            boxdiv=document.createElement("div")
+            imgdiv=document.createElement("div")
+            contdiv=document.createElement("div")
+            img=document.createElement("img")
+            img.src=elem.strCategoryThumb
+            var price=document.createElement("h2")
+            price.textContent=Math.floor(Math.random()*400+100)
+            var but=document.createElement("button")
+            but.textContent="Add to cart"
+            but.addEventListener("click",function(){
+                count++
+                document.querySelector("#count").textContent=count
+                arr.push(elem)
+                localStorage.setItem("cart",JSON.stringify(arr))
+
+            })
+            contdiv.append(price,but)
+            imgdiv.append(img)
+            boxdiv.append(imgdiv,contdiv)
+            boxdiv.id="box"
+
+
+            document.querySelector(".maindiv").append(boxdiv)
+
+       })
+    }
+
+
+</script>

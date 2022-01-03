@@ -1,0 +1,32 @@
+.navbar{
+    width: 90%;
+    height: 100px;
+    border: 1px solid black;
+    margin: auto;
+    display: flex;
+    background: powderblue;
+}
+.navbar>div{
+    width: 100px;
+    margin: 40px;
+    font-size: 25px
+    
+
+}
+.maindiv{
+    width: 90%;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+
+}
+#details{
+    width: 40%;
+    margin: auto;
+    text-align: center;
+}
+#details>input{
+    padding: 10px 30px;
+    margin: 10px;
+}

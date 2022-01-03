@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>index</title>
+    <link rel="stylesheet" href="cart.css">
+</head>
+<body>
+    <div class="navbar">
+        <h1>cart</h1>
+        
+    </div>
+    <div class="allbottom">
+        <div class="maindiv">
+        
+        </div>
+        <div class="right">
+            <h1>Total price:<span id="total"></span></h1>
+            
+        </div>
+    </div>
+    
+</body>
+</html>
+<script>
+    var total=0
+    var arrdata=JSON.parse(localStorage.getItem("cart"))
+    function display(arrdata){
+        arrdata.map(function(elem){
+            boxdiv=document.createElement("div")
+            imgdiv=document.createElement("div")
+            contdiv=document.createElement("div")
+            img=document.createElement("img")
+            img.src=elem.strCategoryThumb
+            var price=document.createElement("h2")
+            value=Math.floor(Math.random()*400+100)
+            price.textContent=value
+            total=total+value
+            var but=document.createElement("button")
+            but.textContent="Remove"
+           
+            contdiv.append(price,but)
+            imgdiv.append(img)
+            boxdiv.append(imgdiv,contdiv)
+            boxdiv.id="box"
+            document.querySelector(".maindiv").append(boxdiv)
+       })
+    }
+    display(arrdata)
+    document.querySelector("#total").textContent=total
+    
+    
+
+</script>
