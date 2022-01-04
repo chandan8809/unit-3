@@ -1,0 +1,14 @@
+.top{
+    width: 90%;
+    height: 80px;
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+}
+.bottom{
+    width: 90%;
+    height: 500px;
+    border: 1px solid black;
+    margin: auto;
+    text-align: center;
+}

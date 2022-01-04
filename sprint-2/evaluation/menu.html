@@ -46,13 +46,20 @@
             img=document.createElement("img")
             img.src=elem.strCategoryThumb
             var price=document.createElement("h2")
-            price.textContent=Math.floor(Math.random()*400+100)
+            var value=Math.floor(Math.random()*400+100);
+            price.textContent=value
             var but=document.createElement("button")
             but.textContent="Add to cart"
             but.addEventListener("click",function(){
                 count++
                 document.querySelector("#count").textContent=count
-                arr.push(elem)
+
+                obj={                                    //creating newobject (price added) and sending it to cart
+                    image:elem.strCategoryThumb,
+                    price:value
+                }
+
+                arr.push(obj)
                 localStorage.setItem("cart",JSON.stringify(arr))
 
             })
